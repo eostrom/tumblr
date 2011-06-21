@@ -1,0 +1,39 @@
+--- 
+- !ruby/struct:VCR::HTTPInteraction 
+  request: !ruby/struct:VCR::Request 
+    method: :get
+    uri: http://mwunsch.tumblr.com:80/api/read/?id=5802300459
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response 
+    status: !ruby/struct:VCR::ResponseStatus 
+      code: 200
+      message: OK
+    headers: 
+      p3p: 
+      - CP="ALL ADM DEV PSAi COM OUR OTRo STP IND ONL"
+      last-modified: 
+      - Fri, 17 Jun 2011 15:34:48 GMT
+      x-robots-tag: 
+      - noindex
+      cache-control: 
+      - max-age=900
+      vary: 
+      - Accept-Encoding
+      x-tumblr-usec: 
+      - D=50155
+      content-type: 
+      - text/xml; charset=UTF-8
+      content-length: 
+      - "2722"
+      date: 
+      - Tue, 21 Jun 2011 23:26:39 GMT
+    body: |
+      <?xml version="1.0" encoding="UTF-8"?>
+      <tumblr version="1.0"><tumblelog name="mwunsch" timezone="US/Eastern" title="M. Wunsch">Collected visual and aural interests of &lt;a href="http://markwunsch.com" rel="me"&gt;Mark Wunsch&lt;/a&gt;.</tumblelog><posts start="0" total="214"><post id="5802300459" url="http://mwunsch.tumblr.com/post/5802300459" url-with-slug="http://mwunsch.tumblr.com/post/5802300459/helots" type="video" date-gmt="2011-05-24 16:04:15 GMT" date="Tue, 24 May 2011 12:04:15" unix-timestamp="1306253055" format="markdown" reblog-key="qS9W9e3r" slug="helots" state="published"><video-caption>&lt;blockquote&gt;
+        &lt;p&gt;Helots. A lot of heels.&lt;/p&gt;
+      &lt;/blockquote&gt;
+      
+      &lt;p&gt;From &lt;a href="http://en.wikipedia.org/wiki/Meet_John_Doe"&gt;&lt;em&gt;Meet John Doe&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;</video-caption><video-source>http://www.youtube.com/watch?v=6WPkOp1XOgU</video-source><video-player>&lt;object width="400" height="336"&gt;&lt;param name="movie" value="http://www.youtube.com/v/6WPkOp1XOgU&amp;amp;rel=0&amp;amp;egm=0&amp;amp;showinfo=0&amp;amp;fs=1"&gt;&lt;/param&gt;&lt;param name="wmode" value="transparent"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/6WPkOp1XOgU&amp;amp;rel=0&amp;amp;egm=0&amp;amp;showinfo=0&amp;amp;fs=1" type="application/x-shockwave-flash" width="400" height="336" allowFullScreen="true" wmode="transparent"&gt;&lt;/embed&gt;&lt;/object&gt;</video-player><video-player max-width="500">&lt;object width="500" height="411"&gt;&lt;param name="movie" value="http://www.youtube.com/v/6WPkOp1XOgU&amp;amp;rel=0&amp;amp;egm=0&amp;amp;showinfo=0&amp;amp;fs=1"&gt;&lt;/param&gt;&lt;param name="wmode" value="transparent"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/6WPkOp1XOgU&amp;amp;rel=0&amp;amp;egm=0&amp;amp;showinfo=0&amp;amp;fs=1" type="application/x-shockwave-flash" width="500" height="411" allowFullScreen="true" wmode="transparent"&gt;&lt;/embed&gt;&lt;/object&gt;</video-player><video-player max-width="250">&lt;object width="248" height="222"&gt;&lt;param name="movie" value="http://www.youtube.com/v/6WPkOp1XOgU&amp;amp;rel=0&amp;amp;egm=0&amp;amp;showinfo=0&amp;amp;fs=1"&gt;&lt;/param&gt;&lt;param name="wmode" value="transparent"&gt;&lt;/param&gt;&lt;param name="allowFullScreen" value="true"&gt;&lt;/param&gt;&lt;embed src="http://www.youtube.com/v/6WPkOp1XOgU&amp;amp;rel=0&amp;amp;egm=0&amp;amp;showinfo=0&amp;amp;fs=1" type="application/x-shockwave-flash" width="248" height="222" allowFullScreen="true" wmode="transparent"&gt;&lt;/embed&gt;&lt;/object&gt;</video-player></post></posts></tumblr>
+
+    http_version: "1.1"

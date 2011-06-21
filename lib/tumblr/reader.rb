@@ -177,7 +177,7 @@ class Tumblr
     
     def self.build_video(post)
       post_id = post['id']
-      video = Tumblr::Post::Video.new(post['video_player'], post_id)
+      video = Tumblr::Post::Video.new(post['video_source'], post_id)
       video.caption = post['video_caption']
       video
     end

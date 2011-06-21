@@ -252,6 +252,16 @@ link
       assert_equal link.first['link_url'], link_post.url
       assert_equal link.first['reblog_key'], link_post.reblog_key
     end
+
+    test 'generates a Post object from a video post with multiple players' do
+      reader = Tumblr::Reader
+      mwunsch = reader.new.read('mwunsch', :id => 5802300459)
+      response = hijack! mwunsch, 'read/video_with_multiple_players'
+      post = reader.build_post(response['tumblr']['posts']['post'])
+      assert post.is_a? Tumblr::Post::Video
+      assert_equal :video, post.type
+      assert_equal 'http://www.youtube.com/watch?v=6WPkOp1XOgU', post.embed
+    end
     
     test 'gets all the posts for a username' do
       reader = Tumblr::Reader.new('test@testermcgee.com','dontrevealmysecrets')
