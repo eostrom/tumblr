@@ -174,6 +174,8 @@ class Tumblr
           :embed
         when :audio
           :'externally-hosted-url'
+        when :answer
+          :answer
         else
           raise "#{type} is not a recognized Tumblr post type."
       end

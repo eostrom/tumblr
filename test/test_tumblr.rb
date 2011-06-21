@@ -671,6 +671,32 @@ link
         assert_equal 'Inner dialogue', conversation.title
       end
     end
+
+    describe 'Answer' do
+      test 'is an answer' do
+        answer = Tumblr::Post::Answer.new
+        assert_equal :answer, answer.type
+      end
+
+      test 'has an optional question' do
+        answer = Tumblr::Post::Answer.new
+        answer.question = 'Why did the chicken cross the road?'
+        assert_equal 'Why did the chicken cross the road?', answer.question
+      end
+        
+      test 'has an optional answer' do
+        answer = Tumblr::Post::Answer.new
+        answer.answer = 'To get to the other side!'
+        assert_equal 'To get to the other side!', answer.answer
+      end
+
+      test 'uses answer as its body' do
+        answer = Tumblr::Post::Answer.new
+        answer.answer = 'To get to the other side!'
+        assert_equal('To get to the other side!',
+          YAML.load(answer.to_yaml)['body'])
+      end
+    end
     
     describe 'Video' do
       test 'is a video' do
