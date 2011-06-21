@@ -51,6 +51,23 @@ class Tumblr
       end
       posts
     end
+
+    def each_post(username, start = 0, total = nil, &block)
+      first_read = read(username, {:num => 50,:start => start}).perform
+      raise %Q(Tumblr response was not successful, "#{first_read.code}: #{first_read.message}") if !first_read.success?
+      posts = self.class.get_posts(first_read)
+      post_total = first_read['tumblr']['posts']['total'].to_i
+      
+      loop do
+        posts.each(&block)
+        
+        start += posts.count
+        break if start >= post_total
+        response = read(username, :num => 50, :start => start).perform
+        posts = self.class.get_posts(response)
+      end
+      post_total
+    end
     
     # Get the Posts as Post objects from a Read response.
     # Pass an additional type parameter to only get Posts of a certain type.

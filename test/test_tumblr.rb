@@ -270,6 +270,21 @@ link
       end
       assert_equal 66, posts.count
     end
+
+    test 'iterates over each post for a username' do
+      reader = Tumblr::Reader.new
+      posts_count = 0
+      last_post = nil
+      returned_count = VCR.use_cassette('read/paginated') do
+        reader.each_post('movingtompls') do |post|
+          last_post = post
+          posts_count += 1
+        end
+      end
+      assert_equal 'snow,winter', last_post.tags
+      assert_equal 74, posts_count
+      assert_equal 74, returned_count
+    end
     
     test 'read pages' do
       reader = Tumblr::Reader.new
